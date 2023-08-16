@@ -12,6 +12,8 @@ const StyledButton = styled.button`
   padding: 0.5rem 2rem;
   border: none;
   border-radius: 0.5rem;
+
+  background-color: ${(props) => props.$styledButtonBg || ""}
 `;
 
 const Button = (props) => {
@@ -35,6 +37,16 @@ const Button = (props) => {
 
   const icon = buttonIconMappings[buttonCategory];
 
+  const colors = {
+    add: "#15872f",
+    edit: "#ffc107",
+    delete: "#dc3545",
+    exit: "#dc3545",
+    "close-modal": "transparent"
+
+  };
+  
+
   return (
     <StyledButton
       type="button"
@@ -43,6 +55,8 @@ const Button = (props) => {
       data-target={dataTarget}
       data-dismiss={dataDismiss}
       onClick={onClick}
+      $styledButtonBg={colors[buttonCategory]}
+     
     >
       {icon && <FontAwesomeIcon icon={icon} />}
       {buttonText}
