@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEdit,
@@ -6,6 +7,13 @@ import {
   faTimes,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
+
+const StyledButton = styled.button`
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+`;
+
 const Button = (props) => {
   const {
     dataToggle,
@@ -28,7 +36,7 @@ const Button = (props) => {
   const icon = buttonIconMappings[buttonCategory];
 
   return (
-    <button
+    <StyledButton
       type="button"
       className={`${buttonCategory || ""} ${className || ""}`}
       data-toggle={dataToggle}
@@ -38,7 +46,7 @@ const Button = (props) => {
     >
       {icon && <FontAwesomeIcon icon={icon} />}
       {buttonText}
-    </button>
+    </StyledButton>
   );
 };
 
