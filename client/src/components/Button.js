@@ -9,12 +9,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const StyledButton = styled.button`
-  padding: 0.5rem 2rem;
+  padding: 0.30rem 1.15rem;
   border: none;
   border-radius: 0.5rem;
 
   background-color: ${(props) => props.$styledButtonBg || ""}
 `;
+const StyledIcon = styled(FontAwesomeIcon)`
+  margin: auto;
+`
 
 const Button = (props) => {
   const {
@@ -58,9 +61,10 @@ const Button = (props) => {
       $styledButtonBg={colors[buttonCategory]}
      
     >
-      {icon && <FontAwesomeIcon icon={icon} />}
+    {icon && <StyledIcon icon={icon} />}
       {buttonText}
     </StyledButton>
+    
   );
 };
 
