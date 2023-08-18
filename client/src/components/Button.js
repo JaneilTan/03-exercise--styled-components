@@ -11,13 +11,13 @@ import {
 const StyledButton = styled.button`
   padding: 0.30rem 1.15rem;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
 
   background-color: ${(props) => props.$styledButtonBg || ""}
 `;
 const StyledIcon = styled(FontAwesomeIcon)`
-  margin: auto;
-`
+  margin-right: 0.5rem;
+`;
 
 const Button = (props) => {
   const {
